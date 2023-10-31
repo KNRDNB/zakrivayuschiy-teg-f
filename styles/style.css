@@ -57,7 +57,7 @@
 
 .accent-font {
   font-family: var(--accent-font-family);
-  font-weight: var(--p-font-weight);
+  font-variation-settings: 'wght' var(--p-font-weight);
   font-style: normal;
   line-height: normal;
   text-transform: uppercase;
@@ -133,7 +133,7 @@
   width: 100%;
   border-block-end: 2px solid var(--text-color);
   padding: 5px 10px;
-  font-weight: var(--h-font-weight);
+  font-variation-settings: 'wght' var(--h-font-weight);
   font-size: 18px;
 }
 
@@ -149,7 +149,7 @@
   opacity: 0.5;
   color: var(--text-color);
   font-family: var(--accent-font-family);
-  font-weight: var(--p-font-weight);
+  font-variation-settings: 'wght' var(--p-font-weight);
   font-size: 14px;
   font-style: normal;
   line-height: normal;
@@ -220,7 +220,7 @@
 
 .card__text {
   padding-block-start: 27px;
-  font-weight: var(--p-font-weight);
+  font-variation-settings: 'wght' var(--p-font-weight);
   font-size: 18px;
   line-height: 116.667%;
 }
@@ -390,7 +390,7 @@
 
 .popup-text {
   width: 198px;
-  font-weight: 400;
+  font-variation-settings: 'wght' var(--p-font-weight);
   font-size: 14px;
   font-style: normal;
   line-height: 150%;
