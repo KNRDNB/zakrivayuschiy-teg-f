@@ -12,3 +12,264 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+@keyframes selected {
+
+  0% {
+    left: -13%;
+  }
+
+  50% {
+    left: calc(-13% - 4px);
+  }
+}
+
+@keyframes menu-opacity {
+
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes menu-focus-after {
+
+  0% {
+    opacity: 1;
+    scale: 0;
+  }
+
+  100% {
+    opacity: 0.6;
+    scale: 1;
+  }
+}
+
+@keyframes menu-focus {
+
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes like-button-focus {
+
+  0% {
+    box-shadow: 0 0 0 var(--text-color);
+  }
+
+  100% {
+    box-shadow: 2px 2px 0 var(--text-color);
+  }
+}
+
+@keyframes like-button-hover-after {
+
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+@keyframes icon-button-focus {
+
+  0% {
+    border: 2px solid transparent;
+  }
+
+  100% {
+    border: 2px solid var(--text-color);
+  }
+}
+
+@keyframes scale-heart {
+
+  0% {
+    scale: 1;
+  }
+
+  100% {
+    scale: 1.5;
+  }
+}
+
+@keyframes sparks-opacity {
+
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.theme-menu__button:disabled::before {
+  animation-name: selected;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.5s;
+}
+
+.theme-menu__button:hover {
+  animation-name: menu-opacity;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  cursor: pointer;
+  animation-duration: 0.3s;
+}
+
+.theme-menu__button:focus-visible::after {
+  transform-origin: bottom left;
+  animation-name: menu-focus-after;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  cursor: pointer;
+  animation-duration: 0.3s;
+}
+
+.theme-menu__button:focus-visible {
+  transform-origin: bottom left;
+  animation-name: menu-focus;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  cursor: pointer;
+  animation-duration: 0.3s;
+}
+
+.card__like-button:hover::before {
+  transform-origin: left;
+  animation-name: like-button-hover-after;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-duration: 0.3s;
+}
+
+.card__like-button:focus-visible {
+  animation-name: like-button-focus;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.5s;
+}
+
+.card__icon-button:focus-visible {
+  animation-name: icon-button-focus;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-duration: 0.3s;
+}
+
+.footer__icon-button:hover::before {
+  transform-origin: left;
+  animation-name: like-button-hover-after;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+  animation-duration: 0.3s;
+}
+
+.footer__icon-button:focus-visible {
+  animation-name: like-button-focus;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 0.5s;
+}
+
+.footer__icon-button:hover .floppy {
+  fill: var(--background-color);
+  transition: fill 0.1s linear;
+}
+
+.contour {
+  fill: var(--text-color);
+  transition: fill 0.1s linear;
+}
+
+.core {
+  fill: transparent;
+  transition: fill 0.3s 0.03s linear;
+}
+
+.is-liked .core {
+  fill: var(--heart-fill-color);
+  transition: fill 0.3s 0.03s linear;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--text-color);
+  transition: fill 0.3s linear;
+}
+
+.main-body {
+  fill: transparent;
+  transition: fill 0.3s linear;
+}
+
+.is-liked .main-body {
+  fill: var(--heart-fill-color);
+  transition: fill 0.1s linear;
+}
+
+.card__icon-button:hover .main-body {
+  fill: var(--text-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.card__icon-button:active .core {
+  fill: var(--heart-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--heart-fill-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.card__icon-button:hover .is-liked .core {
+  fill: var(--heart-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.card__icon-button:hover .is-liked .main-body {
+  fill: var(--heart-fill-color);
+  transition: fill 0.3s 0.05s linear;
+}
+
+.is-liked .contour {
+  fill: var(--heart-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.is-liked .heart {
+  transform-origin: center;
+  animation-name: scale-heart;
+  animation-delay: 0.1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.3s;
+}
+
+.is-liked .sparks {
+  animation-name: sparks-opacity;
+  animation-delay: 0.3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: 0.3s;
+}
