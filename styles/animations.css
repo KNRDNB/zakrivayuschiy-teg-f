@@ -175,7 +175,7 @@
   animation-duration: 0.3s;
 }
 
-.footer__icon-button:hover::before {
+.memory__icon-button:hover::before {
   transform-origin: left;
   animation-name: like-button-hover-after;
   animation-fill-mode: forwards;
@@ -184,7 +184,7 @@
   animation-duration: 0.3s;
 }
 
-.footer__icon-button:focus-visible {
+.memory__icon-button:focus-visible {
   animation-name: like-button-focus;
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
@@ -192,7 +192,7 @@
   animation-duration: 0.5s;
 }
 
-.footer__icon-button:hover .floppy {
+.memory__icon-button:hover .floppy {
   fill: var(--background-color);
   transition: fill 0.1s linear;
 }
